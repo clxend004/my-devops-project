@@ -1,16 +1,26 @@
-version: '3'
+version: "3.8"
 
 services:
+  # ---------------------------
+  # BACKEND
+  # ---------------------------
   backend:
     build: ./backend
     container_name: backend
     ports:
       - "5000:5000"
+    volumes:
+      - ./backend/uploads:/app/uploads
+      - ./backend/logs:/app/logs
     depends_on:
       - blockchain
+      - mongodb
     networks:
       - app-network
 
+  # ---------------------------
+  # FRONTEND
+  # ---------------------------
   frontend:
     build: ./frontend
     container_name: frontend
@@ -19,6 +29,9 @@ services:
     networks:
       - app-network
 
+  # ---------------------------
+  # BLOCKCHAIN
+  # ---------------------------
   blockchain:
     build: ./blockchain
     container_name: blockchain
@@ -27,6 +40,107 @@ services:
     networks:
       - app-network
 
+  # ---------------------------
+  # MONGODB
+  # ---------------------------
+  mongodb:
+    image: mongo:6
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      - app-network
+
+  # ---------------------------
+  # ELASTICSEARCH
+  # ---------------------------
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.12.1
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    ports:
+      - "9200:9200"
+    networks:
+      - app-network
+
+  # ---------------------------
+  # LOGSTASH
+  # ---------------------------
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.12.1
+    container_name: logstash
+    volumes:
+      - ./backend/logs:/usr/share/logstash/logs
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    ports:
+      - "5001:5000"
+    depends_on:
+      - elasticsearch
+    networks:
+      - app-network
+
+  # ---------------------------
+  # KIBANA
+  # ---------------------------
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.12.1
+    container_name: kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    networks:
+      - app-network
+
+  # ---------------------------
+  # PROMETHEUS
+  # ---------------------------
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9091:9090"
+    depends_on:
+      - cadvisor
+    networks:
+      - app-network
+
+  # ---------------------------
+  # GRAFANA
+  # ---------------------------
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+  # ---------------------------
+  # CADVISOR (METRICS)
+  # ---------------------------
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    ports:
+      - "8081:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    networks:
+      - app-network
+
+# ---------------------------
+# NETWORK
+# ---------------------------
 networks:
   app-network:
     driver: bridge
