@@ -1,0 +1,287 @@
+2026-04-07 16:18:33,324 | backend | INFO | Connected to MongoDB
+2026-04-07 16:18:33,351 | backend | INFO | Server started
+2026-04-07 16:18:33,377 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.5:5000
+2026-04-07 16:18:33,388 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-04-07 16:20:28,490 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 16:20:28] "GET /transaction HTTP/1.1" 200 -
+2026-04-07 16:20:33,500 | backend | INFO | TX LOG: {'tx_id': '3dfc8ee8-423b-436b-b406-4944cb4cdfb3', 'wallet': '0x123', 'status': 'success', 'event': 'transfer', 'timestamp': '2026-04-07T16:20:33.370728', '_id': ObjectId('69d52ed1e7cc15e095017df5')}
+2026-04-07 16:20:33,504 | backend | ERROR | Object of type ObjectId is not JSON serializable
+2026-04-07 16:20:33,506 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 16:20:33] "[35m[1mPOST /transaction HTTP/1.1[0m" 500 -
+2026-04-07 16:21:53,063 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 16:21:53] "GET / HTTP/1.1" 200 -
+2026-04-07 16:21:53,276 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 16:21:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-07 16:29:12,147 | backend | INFO | Connected to MongoDB
+2026-04-07 16:29:12,171 | backend | INFO | Server started
+2026-04-07 16:29:12,179 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.5:5000
+2026-04-07 16:29:12,180 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-04-07 16:29:53,624 | backend | INFO | TX LOG: {'tx_id': 'f885ad29-cec9-4916-9946-2bba6fea3e15', 'wallet': '0xabc', 'status': 'success', 'event': 'payment', 'timestamp': '2026-04-07T16:29:53.596744', '_id': '69d5310195545aab47da620f'}
+2026-04-07 16:29:53,626 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 16:29:53] "POST /transaction HTTP/1.1" 200 -
+2026-04-07 16:31:00,149 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 16:31:00] "GET /transaction HTTP/1.1" 200 -
+2026-04-07 16:47:00,698 | backend | INFO | Connected to MongoDB
+2026-04-07 16:47:00,758 | backend | INFO | Server started
+2026-04-07 16:47:00,796 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.8:5000
+2026-04-07 16:47:00,802 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-04-07 16:47:15,803 | backend | INFO | TX LOG: {'tx_id': 'c7fee5d0-58cc-4dbd-9028-5e25ba9070f5', 'wallet': '0x123', 'status': 'success', 'event': 'transfer', 'timestamp': '2026-04-07T16:47:15.563131', '_id': '69d53513341203be48e7e26f'}
+2026-04-07 16:47:15,830 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 16:47:15] "POST /transaction HTTP/1.1" 200 -
+2026-04-07 17:00:00,788 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:00:00] "[31m[1mPOST /webhook/kyc HTTP/1.1[0m" 400 -
+2026-04-07 17:01:23,796 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'id_proof_file': None, 'selfie_file': None, 'timestamp': '2026-04-07T17:01:23.719592', '_id': '69d53863341203be48e7e270'}
+2026-04-07 17:01:23,803 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:01:23] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-04-07 17:02:08,082 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:02:08] "[31m[1mPUT /webhook/kyc HTTP/1.1[0m" 405 -
+2026-04-07 17:02:18,329 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:02:18] "[31m[1mGET /webhook/kyc HTTP/1.1[0m" 405 -
+2026-04-07 17:02:25,525 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:02:25] "[31m[1mPOST /webhook/kyc HTTP/1.1[0m" 400 -
+2026-04-07 17:03:13,051 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:03:13] "[33mPOST /webhook/kyc/69d53863341203be48e7e270 HTTP/1.1[0m" 404 -
+2026-04-07 17:03:20,426 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:03:20] "[33mGET /webhook/kyc/69d53863341203be48e7e270 HTTP/1.1[0m" 404 -
+2026-04-07 17:03:35,726 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:03:35] "[31m[1mGET /webhook/kyc HTTP/1.1[0m" 405 -
+2026-04-07 17:08:57,887 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:08:57] "[31m[1mPOST /webhook/kyc HTTP/1.1[0m" 400 -
+2026-04-07 17:09:52,625 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:09:52] "[31m[1mPOST /webhook/kyc HTTP/1.1[0m" 400 -
+2026-04-07 17:09:55,951 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:09:55] "[31m[1mPOST /webhook/kyc HTTP/1.1[0m" 400 -
+2026-04-07 17:23:10,570 | backend | INFO | Connected to MongoDB
+2026-04-07 17:23:10,582 | backend | INFO | Server started
+2026-04-07 17:23:10,615 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.8:5000
+2026-04-07 17:23:10,622 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-04-07 17:24:46,264 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789012', 'id_proof_file': None, 'selfie_file': None, 'timestamp': '2026-04-07T17:24:46.042236', '_id': '69d53ddeb427c96473d7e419'}
+2026-04-07 17:24:46,284 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:24:46] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-04-07 17:26:41,714 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789012', 'id_proof_file': None, 'selfie_file': None, 'timestamp': '2026-04-07T17:26:41.712374', '_id': '69d53e51b427c96473d7e41a'}
+2026-04-07 17:26:41,715 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:26:41] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-04-07 17:26:48,665 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789012', 'id_proof_file': None, 'selfie_file': None, 'timestamp': '2026-04-07T17:26:48.663908', '_id': '69d53e58b427c96473d7e41b'}
+2026-04-07 17:26:48,674 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:26:48] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-04-07 17:30:25,263 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verfied', 'score': 95, 'aadhar': '123456789', 'id_proof_file': 'ec8fdac0-6ea9-4da0-949b-c68958649c6f_Screenshot 2026-01-24 192333.png', 'selfie_file': '72254874-f62f-4455-90ba-74ce8c604913_Screenshot 2025-11-07 121540.png', 'timestamp': '2026-04-07T17:30:25.261743', '_id': '69d53f31b427c96473d7e41c'}
+2026-04-07 17:30:25,264 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:30:25] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-04-07 17:31:43,279 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:31:43] "[31m[1mGET /webhook/kyc HTTP/1.1[0m" 405 -
+2026-04-07 17:31:55,798 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:31:55] "[31m[1mGET /webhook/kyc HTTP/1.1[0m" 405 -
+2026-04-07 17:32:06,848 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:32:06] "[31m[1mGET /webhook/kyc HTTP/1.1[0m" 405 -
+2026-04-07 17:32:19,321 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:32:19] "[31m[1mGET /webhook/kyc HTTP/1.1[0m" 405 -
+2026-04-07 17:41:46,222 | backend | INFO | Connected to MongoDB
+2026-04-07 17:41:46,344 | backend | INFO | Server started
+2026-04-07 17:41:46,441 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.8:5000
+2026-04-07 17:41:46,450 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-04-07 17:42:15,541 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verfied', 'score': 95, 'aadhar': '123456789', 'id_proof_file': '527d581b-2543-434a-929d-0fdd48834bc8_Screenshot 2026-01-24 192333.png', 'selfie_file': '4484c533-ed3a-46e0-9068-dfb80419242b_Screenshot 2025-11-07 121540.png', 'timestamp': '2026-04-07T17:42:15.201696', '_id': '69d541f7963a3cc73ca102e9'}
+2026-04-07 17:42:15,657 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:42:15] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-04-07 17:42:27,107 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:42:27] "GET /webhook/kyc HTTP/1.1" 200 -
+2026-04-07 17:45:21,363 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:45:21] "GET /transaction HTTP/1.1" 200 -
+2026-04-07 17:45:50,318 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:45:50] "GET /transaction HTTP/1.1" 200 -
+2026-04-07 17:45:54,957 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:45:54] "GET /transaction HTTP/1.1" 200 -
+2026-04-07 17:46:20,911 | backend | INFO | TX LOG: {'tx_id': 'c1abfa73-0c21-4652-af8e-003fa2fe1d57', 'wallet': '0xabc123', 'status': 'success', 'event': 'payment', 'timestamp': '2026-04-07T17:46:20.811196', '_id': '69d542ec963a3cc73ca102ea'}
+2026-04-07 17:46:20,914 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:46:20] "POST /transaction HTTP/1.1" 200 -
+2026-04-07 17:46:37,624 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:46:37] "GET /transaction HTTP/1.1" 200 -
+2026-04-07 17:47:07,553 | backend | INFO | TX LOG: {'tx_id': 'ff4d8361-a7d6-4108-9aec-4e1ffc7b491f', 'wallet': '0xabee', 'status': 'success', 'event': 'payment', 'timestamp': '2026-04-07T17:47:07.551912', '_id': '69d5431b963a3cc73ca102eb'}
+2026-04-07 17:47:07,555 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:47:07] "POST /transaction HTTP/1.1" 200 -
+2026-04-07 17:47:13,950 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:47:13] "GET /transaction HTTP/1.1" 200 -
+2026-04-07 17:51:08,327 | backend | INFO | TX LOG: {'tx_id': '3efe5c19-7ddd-47a6-ae5a-884ccbec44fa', 'wallet': '0xabc123', 'status': 'success', 'event': 'payment', 'timestamp': '2026-04-07T17:51:08.325024', '_id': '69d5440c963a3cc73ca102ec'}
+2026-04-07 17:51:08,328 | backend | INFO | 172.18.0.1 - - [07/Apr/2026 17:51:08] "POST /transaction HTTP/1.1" 200 -
+2026-04-08 01:33:19,960 | backend | INFO | Connected to MongoDB
+2026-04-08 01:33:19,971 | backend | INFO | Server started
+2026-04-08 01:33:20,001 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2026-04-08 01:33:20,002 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-04-08 01:33:20,583 | backend | INFO | 172.18.0.1 - - [08/Apr/2026 01:33:20] "GET / HTTP/1.1" 200 -
+2026-04-08 01:33:20,666 | backend | INFO | 172.18.0.1 - - [08/Apr/2026 01:33:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-08 01:33:23,709 | backend | INFO | 172.18.0.1 - - [08/Apr/2026 01:33:23] "GET / HTTP/1.1" 200 -
+2026-04-08 01:33:45,280 | backend | INFO | Connected to MongoDB
+2026-04-08 01:33:45,287 | backend | INFO | Server started
+2026-04-08 01:33:45,304 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2026-04-08 01:33:45,304 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-04-08 01:38:05,874 | backend | INFO | Connected to MongoDB
+2026-04-08 01:38:05,911 | backend | INFO | Server started
+2026-04-08 01:38:05,933 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.7:5000
+2026-04-08 01:38:05,946 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-04-08 01:38:21,744 | backend | INFO | 172.18.0.1 - - [08/Apr/2026 01:38:21] "GET / HTTP/1.1" 200 -
+2026-04-08 01:38:22,018 | backend | INFO | 172.18.0.1 - - [08/Apr/2026 01:38:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-09 06:07:49,650 | backend | INFO | Connected to MongoDB
+2026-04-09 06:07:49,671 | backend | INFO | Server started
+2026-04-09 06:07:49,681 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.7:5000
+2026-04-09 06:07:49,686 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-04-09 06:07:58,739 | backend | INFO | 172.18.0.1 - - [09/Apr/2026 06:07:58] "GET / HTTP/1.1" 200 -
+2026-04-09 06:07:59,208 | backend | INFO | 172.18.0.1 - - [09/Apr/2026 06:07:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-09 06:15:27,827 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789012', 'id_proof_file': None, 'selfie_file': None, 'timestamp': '2026-04-09T06:15:27.800314', '_id': '69d743ff2b12d10a6e937772'}
+2026-04-09 06:15:27,833 | backend | INFO | 172.18.0.1 - - [09/Apr/2026 06:15:27] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-04-09 06:16:20,993 | backend | INFO | 172.18.0.1 - - [09/Apr/2026 06:16:20] "[33mPOST /webhook/kyc/69d53863341203be48e7e270 HTTP/1.1[0m" 404 -
+2026-04-09 06:16:41,738 | backend | INFO | 172.18.0.1 - - [09/Apr/2026 06:16:41] "[31m[1mPOST /webhook/kyc HTTP/1.1[0m" 400 -
+2026-04-09 06:16:57,728 | backend | INFO | 172.18.0.1 - - [09/Apr/2026 06:16:57] "GET /webhook/kyc HTTP/1.1" 200 -
+2026-04-09 06:17:27,357 | backend | INFO | 172.18.0.1 - - [09/Apr/2026 06:17:27] "[31m[1mPOST /webhook/kyc HTTP/1.1[0m" 400 -
+2026-04-09 06:17:59,093 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789012', 'id_proof_file': None, 'selfie_file': None, 'timestamp': '2026-04-09T06:17:59.092291', '_id': '69d744972b12d10a6e937773'}
+2026-04-09 06:17:59,095 | backend | INFO | 172.18.0.1 - - [09/Apr/2026 06:17:59] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-04-09 06:21:13,058 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789012', 'id_proof_file': None, 'selfie_file': None, 'timestamp': '2026-04-09T06:21:13.050012', '_id': '69d745592b12d10a6e937774'}
+2026-04-09 06:21:13,062 | backend | INFO | 172.18.0.1 - - [09/Apr/2026 06:21:13] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-04-09 06:21:23,001 | backend | INFO | 172.18.0.1 - - [09/Apr/2026 06:21:23] "GET /webhook/kyc HTTP/1.1" 200 -
+2026-04-09 06:25:14,941 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verfied', 'score': 95, 'aadhar': '123456789', 'id_proof_file': 'de9aadca-41d9-4e1c-92d3-903a5960d577_Screenshot 2026-03-20 224013.png', 'selfie_file': '416a6ec6-d13d-4f18-aa49-cc642cbcc7c6_Screenshot 2025-11-04 205325.png', 'timestamp': '2026-04-09T06:25:14.939252', '_id': '69d7464a2b12d10a6e937775'}
+2026-04-09 06:25:14,942 | backend | INFO | 172.18.0.1 - - [09/Apr/2026 06:25:14] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-04-09 06:45:35,044 | backend | INFO | Connected to MongoDB
+2026-04-09 06:45:35,079 | backend | INFO | Server started
+2026-04-09 06:45:35,106 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.8:5000
+2026-04-09 06:45:35,108 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-04-09 07:08:20,015 | backend | INFO | Connected to MongoDB
+2026-04-09 07:08:20,053 | backend | INFO | Server started
+2026-04-09 07:08:20,073 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.11:5000
+2026-04-09 07:08:20,081 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-04-26 02:21:57,109 | backend | INFO | Connected to MongoDB
+2026-04-26 02:21:57,134 | backend | INFO | Server started
+2026-04-26 02:21:57,152 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.8:5000
+2026-04-26 02:21:57,165 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-04-26 02:27:47,098 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789012', 'id_proof_file': None, 'selfie_file': None, 'timestamp': '2026-04-26T02:27:47.022533', '_id': '69ed7823684c2a88cb095464'}
+2026-04-26 02:27:47,108 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:27:47] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-04-26 02:28:33,830 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:28:33] "[31m[1mPOST /webhook/kyc HTTP/1.1[0m" 400 -
+2026-04-26 02:28:54,663 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:28:54] "GET /webhook/kyc HTTP/1.1" 200 -
+2026-04-26 02:32:48,414 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:32:48] "GET /webhook/kyc HTTP/1.1" 200 -
+2026-04-26 02:34:10,224 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:34:10] "GET /webhook/kyc HTTP/1.1" 200 -
+2026-04-26 02:34:29,654 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verfied', 'score': 95, 'aadhar': '123456789', 'id_proof_file': '7c26d381-0b9a-4aa6-9601-f1a2f8108055_Screenshot 2026-03-20 224013.png', 'selfie_file': '905d88af-ecba-4e60-9e9d-19dbd66fd12f_Screenshot 2025-11-04 205325.png', 'timestamp': '2026-04-26T02:34:29.650900', '_id': '69ed79b5684c2a88cb095465'}
+2026-04-26 02:34:29,657 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:34:29] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-04-26 02:38:28,000 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:38:28] "GET /transaction HTTP/1.1" 200 -
+2026-04-26 02:38:56,240 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:38:56] "GET /transaction HTTP/1.1" 200 -
+2026-04-26 02:39:09,182 | backend | INFO | TX LOG: {'tx_id': 'db8f1752-6736-4dfc-be60-4236ec86f932', 'wallet': '0xabc123', 'status': 'success', 'event': 'payment', 'timestamp': '2026-04-26T02:39:09.142508', '_id': '69ed7acd684c2a88cb095466'}
+2026-04-26 02:39:09,184 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:39:09] "POST /transaction HTTP/1.1" 200 -
+2026-04-26 02:40:15,067 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:40:15] "[31m[1mPOST /transaction/69ed7acd684c2a88cb095466 HTTP/1.1[0m" 405 -
+2026-04-26 02:40:21,769 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:40:21] "[33mGET /transaction/69ed7acd684c2a88cb095466 HTTP/1.1[0m" 404 -
+2026-04-26 02:40:51,145 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:40:51] "[31m[1mPUT /transaction/69ed7acd684c2a88cb095466 HTTP/1.1[0m" 405 -
+2026-04-26 02:40:57,675 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:40:57] "[33mGET /transaction/69ed7acd684c2a88cb095466 HTTP/1.1[0m" 404 -
+2026-04-26 02:41:05,603 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:41:05] "[33mGET /transaction/ HTTP/1.1[0m" 404 -
+2026-04-26 02:41:10,938 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:41:10] "[33mPOST /transaction/ HTTP/1.1[0m" 404 -
+2026-04-26 02:41:13,640 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:41:13] "[33mPOST /transaction/ HTTP/1.1[0m" 404 -
+2026-04-26 02:41:16,168 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:41:16] "[33mPOST /transaction/ HTTP/1.1[0m" 404 -
+2026-04-26 02:41:51,055 | backend | INFO | TX LOG: {'tx_id': '63d55f59-6ca6-4c2b-b5fd-01cf40751181', 'wallet': '0xabc123', 'status': 'success', 'event': 'payment', 'timestamp': '2026-04-26T02:41:51.053023', '_id': '69ed7b6f684c2a88cb095467'}
+2026-04-26 02:41:51,056 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:41:51] "POST /transaction HTTP/1.1" 200 -
+2026-04-26 02:42:03,642 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 02:42:03] "GET /transaction HTTP/1.1" 200 -
+2026-04-26 03:20:29,129 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 03:20:29] "GET /transaction/db8f1752-6736-4dfc-be60-4236ec86f932 HTTP/1.1" 200 -
+2026-04-26 03:20:31,773 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 03:20:31] "GET /transaction/db8f1752-6736-4dfc-be60-4236ec86f932 HTTP/1.1" 200 -
+2026-04-26 03:20:42,551 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 03:20:42] "[31m[1mPOST /transaction/db8f1752-6736-4dfc-be60-4236ec86f932 HTTP/1.1[0m" 405 -
+2026-04-26 03:20:49,048 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 03:20:49] "GET /transaction/db8f1752-6736-4dfc-be60-4236ec86f932 HTTP/1.1" 200 -
+2026-04-26 03:21:05,893 | backend | INFO | 172.18.0.1 - - [26/Apr/2026 03:21:05] "[33mGET /transaction/69ed7acd684c2a88cb095466 HTTP/1.1[0m" 404 -
+2026-05-01 11:27:39,995 | backend | INFO | Connected to MongoDB
+2026-05-01 11:27:40,012 | backend | INFO | Server started
+2026-05-01 11:27:40,031 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.11:5000
+2026-05-01 11:27:40,033 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-05-01 11:28:54,474 | backend | INFO | 172.18.0.1 - - [01/May/2026 11:28:54] "[31m[1mPOST /webhook/kyc HTTP/1.1[0m" 400 -
+2026-05-01 11:29:48,916 | backend | INFO | KYC CREATED: {'user_id': '1', 'status': 'verified', 'score': 95, 'aadhar': '123456789012', 'id_proof_file': None, 'selfie_file': None, 'timestamp': '2026-05-01T11:29:48.602577', '_id': '69f48eacb6a17950b990d43c'}
+2026-05-01 11:29:48,931 | backend | INFO | 172.18.0.1 - - [01/May/2026 11:29:48] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-05-01 11:30:24,138 | backend | INFO | 172.18.0.1 - - [01/May/2026 11:30:24] "[31m[1mPOST /webhook/kyc HTTP/1.1[0m" 400 -
+2026-05-01 11:32:27,145 | backend | INFO | 172.18.0.1 - - [01/May/2026 11:32:27] "GET /webhook/kyc HTTP/1.1" 200 -
+2026-05-01 11:32:42,681 | backend | INFO | 172.18.0.1 - - [01/May/2026 11:32:42] "GET /webhook/kyc HTTP/1.1" 200 -
+2026-05-01 11:35:06,806 | backend | INFO | KYC CREATED: {'user_id': '1', 'status': 'pending', 'score': 105, 'aadhar': '123456789012', 'id_proof_file': None, 'selfie_file': None, 'timestamp': '2026-05-01T11:35:06.801356', '_id': '69f48feab6a17950b990d43d'}
+2026-05-01 11:35:06,814 | backend | INFO | 172.18.0.1 - - [01/May/2026 11:35:06] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-05-01 11:44:17,321 | backend | INFO | 172.18.0.1 - - [01/May/2026 11:44:17] "GET /webhook/kyc HTTP/1.1" 200 -
+2026-05-01 11:49:18,660 | backend | INFO | TX LOG: {'tx_id': '9c9bb0c1-1cfc-489a-997c-554c615320d6', 'wallet': '0xabc123', 'status': 'success', 'event': 'payment', 'timestamp': '2026-05-01T11:49:18.636151', '_id': '69f4933eb6a17950b990d43e'}
+2026-05-01 11:49:18,698 | backend | INFO | 172.18.0.1 - - [01/May/2026 11:49:18] "POST /transaction HTTP/1.1" 200 -
+2026-05-01 11:49:47,177 | backend | INFO | 172.18.0.1 - - [01/May/2026 11:49:47] "GET /transaction HTTP/1.1" 200 -
+2026-05-07 08:58:51,920 | backend | INFO | Connected to MongoDB
+2026-05-07 08:58:51,940 | backend | INFO | Server started
+2026-05-07 08:58:51,975 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2026-05-07 08:58:51,977 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-05-07 08:59:00,818 | backend | INFO | 172.18.0.1 - - [07/May/2026 08:59:00] "GET / HTTP/1.1" 200 -
+2026-05-07 08:59:00,954 | backend | INFO | 172.18.0.1 - - [07/May/2026 08:59:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-07 09:02:53,140 | backend | INFO | Connected to MongoDB
+2026-05-07 09:02:53,149 | backend | INFO | Server started
+2026-05-07 09:02:53,211 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.11:5000
+2026-05-07 09:02:53,216 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-05-07 09:02:53,539 | backend | INFO | 172.18.0.1 - - [07/May/2026 09:02:53] "GET / HTTP/1.1" 200 -
+2026-05-07 09:03:15,529 | backend | INFO | 172.18.0.1 - - [07/May/2026 09:03:15] "GET / HTTP/1.1" 200 -
+2026-05-07 09:03:15,641 | backend | INFO | 172.18.0.1 - - [07/May/2026 09:03:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-07 10:13:38,033 | backend | INFO | Connected to MongoDB
+2026-05-07 10:13:38,058 | backend | INFO | Server started
+2026-05-07 10:13:38,084 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.11:5000
+2026-05-07 10:13:38,094 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-05-07 10:15:33,977 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789012', 'id_proof_file': None, 'selfie_file': None, 'timestamp': '2026-05-07T10:15:33.746790', '_id': '69fc664580c76c6b94c0c472'}
+2026-05-07 10:15:34,045 | backend | INFO | 172.18.0.1 - - [07/May/2026 10:15:34] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-05-07 10:24:12,165 | backend | INFO | 172.18.0.1 - - [07/May/2026 10:24:12] "[33mPOST /transaction/ HTTP/1.1[0m" 404 -
+2026-05-07 10:25:03,228 | backend | INFO | 172.18.0.1 - - [07/May/2026 10:25:03] "[33mPOST /transaction/ HTTP/1.1[0m" 404 -
+2026-05-07 10:25:09,874 | backend | INFO | TX LOG: {'tx_id': '6fbe8478-8bef-47d2-8720-e588bdd68965', 'wallet': '0xabc123', 'status': 'success', 'event': 'payment', 'timestamp': '2026-05-07T10:25:09.865936', '_id': '69fc688580c76c6b94c0c473'}
+2026-05-07 10:25:09,875 | backend | INFO | 172.18.0.1 - - [07/May/2026 10:25:09] "POST /transaction HTTP/1.1" 200 -
+2026-05-07 10:25:32,057 | backend | INFO | 172.18.0.1 - - [07/May/2026 10:25:32] "GET /transaction HTTP/1.1" 200 -
+2026-05-11 12:14:46,605 | backend | INFO | Connected to MongoDB
+2026-05-11 12:14:46,641 | backend | INFO | Server started
+2026-05-11 12:14:46,711 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.11:5000
+2026-05-11 12:14:46,724 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-05-11 12:38:46,291 | backend | INFO | Connected to MongoDB
+2026-05-11 12:38:46,296 | backend | INFO | Server started
+2026-05-11 12:38:46,305 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2026-05-11 12:38:46,306 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-05-11 12:38:56,349 | backend | INFO | Connected to MongoDB
+2026-05-11 12:38:56,383 | backend | INFO | Server started
+2026-05-11 12:38:56,424 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.11:5000
+2026-05-11 12:38:56,433 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-05-11 12:39:08,953 | backend | INFO | 172.18.0.1 - - [11/May/2026 12:39:08] "GET / HTTP/1.1" 200 -
+2026-05-11 12:39:09,749 | backend | INFO | 172.18.0.1 - - [11/May/2026 12:39:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-11 12:39:18,250 | backend | INFO | TX LOG: {'tx_id': 'c68dec36-4092-4a59-9b90-36ebe04c8d09', 'wallet': '0xabc123', 'status': 'success', 'event': 'payment', 'timestamp': '2026-05-11T12:39:18.183374', '_id': '6a01cdf6ba757ffdfcd0e827'}
+2026-05-11 12:39:18,280 | backend | INFO | 172.18.0.1 - - [11/May/2026 12:39:18] "POST /transaction HTTP/1.1" 200 -
+2026-05-11 12:39:27,820 | backend | INFO | 172.18.0.1 - - [11/May/2026 12:39:27] "GET / HTTP/1.1" 200 -
+2026-05-11 12:39:27,917 | backend | INFO | 172.18.0.1 - - [11/May/2026 12:39:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-11 12:39:45,010 | backend | INFO | 172.18.0.1 - - [11/May/2026 12:39:45] "GET /transaction HTTP/1.1" 200 -
+2026-05-11 12:40:21,841 | backend | INFO | TX LOG: {'tx_id': '34ad4e1a-1a22-4ae8-9844-f1d3ee243520', 'wallet': '0xabc123', 'status': 'success', 'event': 'payment', 'timestamp': '2026-05-11T12:40:21.832623', '_id': '6a01ce35ba757ffdfcd0e828'}
+2026-05-11 12:40:21,855 | backend | INFO | 172.18.0.1 - - [11/May/2026 12:40:21] "POST /transaction HTTP/1.1" 200 -
+2026-05-11 12:43:49,751 | backend | INFO | 172.18.0.1 - - [11/May/2026 12:43:49] "[31m[1mPOST /transaction/69ed7acd684c2a88cb095466 HTTP/1.1[0m" 405 -
+2026-05-11 12:43:56,750 | backend | INFO | 172.18.0.1 - - [11/May/2026 12:43:56] "[33mGET /transaction/69ed7acd684c2a88cb095466 HTTP/1.1[0m" 404 -
+2026-05-11 12:44:11,865 | backend | INFO | 172.18.0.1 - - [11/May/2026 12:44:11] "[33mGET /transaction/ HTTP/1.1[0m" 404 -
+2026-05-11 12:44:17,430 | backend | INFO | 172.18.0.1 - - [11/May/2026 12:44:17] "[33mPOST /transaction/ HTTP/1.1[0m" 404 -
+2026-05-11 12:45:19,077 | backend | INFO | 172.18.0.1 - - [11/May/2026 12:45:19] "[33mGET /transaction/ HTTP/1.1[0m" 404 -
+2026-05-11 12:45:55,776 | backend | INFO | 172.18.0.1 - - [11/May/2026 12:45:55] "[31m[1mPOST /webhook/kyc HTTP/1.1[0m" 400 -
+2026-05-11 12:46:29,796 | backend | INFO | 172.18.0.1 - - [11/May/2026 12:46:29] "GET /webhook/kyc HTTP/1.1" 200 -
+2026-06-11 01:31:10,241 | backend | INFO | Connected to MongoDB
+2026-06-11 01:31:10,260 | backend | INFO | Server started
+2026-06-11 01:31:10,284 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.10:5000
+2026-06-11 01:31:10,287 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-06-17 07:11:28,563 | backend | INFO | Connected to MongoDB
+2026-06-17 07:11:28,607 | backend | INFO | Server started
+2026-06-17 07:11:28,681 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.10:5000
+2026-06-17 07:11:28,707 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-06-17 07:14:20,237 | backend | INFO | 172.18.0.1 - - [17/Jun/2026 07:14:20] "GET / HTTP/1.1" 200 -
+2026-06-17 07:14:20,423 | backend | INFO | 172.18.0.1 - - [17/Jun/2026 07:14:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-17 07:29:50,450 | backend | INFO | 172.18.0.1 - - [17/Jun/2026 07:29:50] "GET / HTTP/1.1" 200 -
