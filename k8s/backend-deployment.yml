@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: backend-app:v2
+        image: my-devops-project-backend:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 5000
