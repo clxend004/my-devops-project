@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+
+  backend:
+    image: ghcr.io/ranjith0703/backend-app:latest
+    container_name: backend-service
+    ports:
+      - "5000:5000"
+    depends_on:
+      - blockchain
+
+  blockchain:
+    image: ghcr.io/ranjith0703/blockchain-app:latest
+    container_name: blockchain-service
+    ports:
+      - "8545:8545"
+
+  frontend:
+    image: ghcr.io/ranjith0703/frontend-app:latest
+    container_name: frontend-service
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend

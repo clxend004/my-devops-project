@@ -1,0 +1,140 @@
+name: DevOps CI Pipeline
+
+permissions:
+  contents: read
+  packages: write
+
+on:
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  ci-validation:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # 1️⃣ Checkout repository
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+
+    # -------------------------
+    # BACKEND VALIDATION
+    # -------------------------
+
+    # 2️⃣ Setup Python
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+    # 3️⃣ Install Backend Dependencies
+    - name: Install Backend Dependencies
+      run: |
+        cd backend
+        pip install -r requirements.txt
+
+    # 4️⃣ Validate Backend Code
+    - name: Validate Backend Code
+      run: |
+        cd backend/src
+        python -m py_compile app.py
+
+
+    # -------------------------
+    # BLOCKCHAIN VALIDATION
+    # -------------------------
+
+    # 5️⃣ Setup Node.js
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: "22"
+
+    # 6️⃣ Install Blockchain Dependencies
+    - name: Install Blockchain Dependencies
+      run: |
+        cd blockchain
+        npm install
+
+    # 7️⃣ Run Hardhat Tests
+    - name: Run Hardhat Unit Tests
+      run: |
+        cd blockchain
+        npx hardhat test
+
+
+    # -------------------------
+    # DOCKER REGISTRY LOGIN
+    # -------------------------
+
+    # 8️⃣ Login to GitHub Container Registry
+    - name: Login to GHCR
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+
+    # -------------------------
+    # VERSION TAG
+    # -------------------------
+
+    # 9️⃣ Get Commit Hash
+    - name: Get Commit Hash
+      run: echo "COMMIT_HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+
+    # -------------------------
+    # BUILD DOCKER IMAGES
+    # -------------------------
+
+    # 🔟 Build Backend Image
+    - name: Build Backend Docker Image
+      run: |
+        docker build \
+        -t ghcr.io/${{ github.repository_owner }}/backend-app:${{ env.COMMIT_HASH }} \
+        -t ghcr.io/${{ github.repository_owner }}/backend-app:latest \
+        ./backend
+
+    # 1️⃣1️⃣ Build Blockchain Image
+    - name: Build Blockchain Docker Image
+      run: |
+        docker build \
+        -t ghcr.io/${{ github.repository_owner }}/blockchain-app:${{ env.COMMIT_HASH }} \
+        -t ghcr.io/${{ github.repository_owner }}/blockchain-app:latest \
+        ./blockchain
+
+    # 1️⃣2️⃣ Build Frontend Image
+    - name: Build Frontend Docker Image
+      run: |
+        docker build \
+        -t ghcr.io/${{ github.repository_owner }}/frontend-app:${{ env.COMMIT_HASH }} \
+        -t ghcr.io/${{ github.repository_owner }}/frontend-app:latest \
+        ./frontend
+
+
+    # -------------------------
+    # PUSH IMAGES
+    # -------------------------
+
+    # 1️⃣3️⃣ Push Backend Image
+    - name: Push Backend Image
+      run: |
+        docker push ghcr.io/${{ github.repository_owner }}/backend-app:${{ env.COMMIT_HASH }}
+        docker push ghcr.io/${{ github.repository_owner }}/backend-app:latest
+
+    # 1️⃣4️⃣ Push Blockchain Image
+    - name: Push Blockchain Image
+      run: |
+        docker push ghcr.io/${{ github.repository_owner }}/blockchain-app:${{ env.COMMIT_HASH }}
+        docker push ghcr.io/${{ github.repository_owner }}/blockchain-app:latest
+
+    # 1️⃣5️⃣ Push Frontend Image
+    - name: Push Frontend Image
+      run: |
+        docker push ghcr.io/${{ github.repository_owner }}/frontend-app:${{ env.COMMIT_HASH }}
+        docker push ghcr.io/${{ github.repository_owner }}/frontend-app:latest
