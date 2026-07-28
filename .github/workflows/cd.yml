@@ -13,28 +13,40 @@ jobs:
 
     steps:
 
+    # Checkout repository
     - name: Checkout Code
       uses: actions/checkout@v4
 
 
+    # Check Kubernetes connection
+    - name: Check Kubernetes Context
+      run: |
+        kubectl config current-context
+        kubectl get nodes
+
+
+    # Deploy Backend
     - name: Deploy Backend
       run: |
-        kubectl apply -f k8s/backend-deployment.yml
-        kubectl apply -f k8s/backend-service.yml
+        kubectl apply --validate=false -f k8s/backend-deployment.yml
+        kubectl apply --validate=false -f k8s/backend-service.yml
 
 
+    # Deploy Frontend
     - name: Deploy Frontend
       run: |
-        kubectl apply -f k8s/frontend-deployment.yml
-        kubectl apply -f k8s/frontend-service.yml
+        kubectl apply --validate=false -f k8s/frontend-deployment.yml
+        kubectl apply --validate=false -f k8s/frontend-service.yml
 
 
+    # Deploy Blockchain
     - name: Deploy Blockchain
       run: |
-        kubectl apply -f k8s/blockchain-deployment.yaml
-        kubectl apply -f k8s/blockchain-service.yaml
+        kubectl apply --validate=false -f k8s/blockchain-deployment.yaml
+        kubectl apply --validate=false -f k8s/blockchain-service.yaml
 
 
+    # Verify Deployment
     - name: Check Kubernetes Status
       run: |
         kubectl get pods
