@@ -295,3 +295,28 @@
 2026-07-02 18:21:38,962 | backend | INFO | [33mPress CTRL+C to quit[0m
 =======
 >>>>>>> ee3ea19a82179de72f6d6e028722fa0895bebdc2
+2026-07-03 15:30:48,060 | backend | INFO | Connected to MongoDB
+2026-07-03 15:30:48,075 | backend | INFO | Server started
+2026-07-03 15:30:48,091 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.10:5000
+2026-07-03 15:30:48,097 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-07-03 15:40:28,240 | backend | INFO | Connected to MongoDB
+2026-07-03 15:40:28,249 | backend | INFO | Server started
+2026-07-03 15:40:28,256 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.11:5000
+2026-07-03 15:40:28,259 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-07-03 15:57:43,878 | backend | INFO | 172.18.0.1 - - [03/Jul/2026 15:57:43] "GET / HTTP/1.1" 200 -
+2026-07-03 15:57:43,994 | backend | INFO | 172.18.0.1 - - [03/Jul/2026 15:57:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-04 16:17:07,880 | backend | INFO | Connected to MongoDB
+2026-07-04 16:17:07,890 | backend | INFO | Server started
+2026-07-04 16:17:07,913 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.11:5000
+2026-07-04 16:17:07,917 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-07-04 18:27:30,070 | backend | INFO | 172.18.0.1 - - [04/Jul/2026 18:27:30] "GET / HTTP/1.1" 200 -
+2026-07-04 18:27:30,136 | backend | INFO | 172.18.0.1 - - [04/Jul/2026 18:27:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
