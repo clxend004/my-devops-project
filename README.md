@@ -8,7 +8,4 @@
 ## Run with Docker
 docker-compose up --build
 
-Final pr check
-
-
-develop by CLXEND_TEAM
+develop by Ranjith 
