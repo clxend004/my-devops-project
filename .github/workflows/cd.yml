@@ -1,0 +1,41 @@
+name: DevOps CD Pipeline
+
+"on":
+  push:
+    branches:
+      - main
+
+jobs:
+
+  deployment:
+
+    runs-on: self-hosted
+
+    steps:
+
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+
+    - name: Deploy Backend
+      run: |
+        kubectl apply -f k8s/backend-deployment.yaml
+        kubectl apply -f k8s/backend-service.yaml
+
+
+    - name: Deploy Frontend
+      run: |
+        kubectl apply -f k8s/frontend-deployment.yaml
+        kubectl apply -f k8s/frontend-service.yaml
+
+
+    - name: Deploy Blockchain
+      run: |
+        kubectl apply -f k8s/blockchain-deployment.yaml
+        kubectl apply -f k8s/blockchain-service.yaml
+
+
+    - name: Check Kubernetes Status
+      run: |
+        kubectl get pods
+        kubectl get services
