@@ -11,6 +11,9 @@ jobs:
 
     runs-on: self-hosted
 
+    env:
+      KUBECONFIG: C:\Users\Ranjith\.kube\config
+
     steps:
 
     # Checkout repository
@@ -20,6 +23,7 @@ jobs:
 
     # Check Kubernetes connection
     - name: Check Kubernetes Context
+      shell: powershell
       run: |
         kubectl config current-context
         kubectl get nodes
@@ -27,6 +31,7 @@ jobs:
 
     # Deploy Backend
     - name: Deploy Backend
+      shell: powershell
       run: |
         kubectl apply --validate=false -f k8s/backend-deployment.yml
         kubectl apply --validate=false -f k8s/backend-service.yml
@@ -34,6 +39,7 @@ jobs:
 
     # Deploy Frontend
     - name: Deploy Frontend
+      shell: powershell
       run: |
         kubectl apply --validate=false -f k8s/frontend-deployment.yml
         kubectl apply --validate=false -f k8s/frontend-service.yml
@@ -41,6 +47,7 @@ jobs:
 
     # Deploy Blockchain
     - name: Deploy Blockchain
+      shell: powershell
       run: |
         kubectl apply --validate=false -f k8s/blockchain-deployment.yaml
         kubectl apply --validate=false -f k8s/blockchain-service.yaml
@@ -48,6 +55,7 @@ jobs:
 
     # Verify Deployment
     - name: Check Kubernetes Status
+      shell: powershell
       run: |
         kubectl get pods
         kubectl get services
