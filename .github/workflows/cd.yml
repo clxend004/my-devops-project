@@ -19,14 +19,14 @@ jobs:
 
     - name: Deploy Backend
       run: |
-        kubectl apply -f k8s/backend-deployment.yaml
-        kubectl apply -f k8s/backend-service.yaml
+        kubectl apply -f k8s/backend-deployment.yml
+        kubectl apply -f k8s/backend-service.yml
 
 
     - name: Deploy Frontend
       run: |
-        kubectl apply -f k8s/frontend-deployment.yaml
-        kubectl apply -f k8s/frontend-service.yaml
+        kubectl apply -f k8s/frontend-deployment.yml
+        kubectl apply -f k8s/frontend-service.yml
 
 
     - name: Deploy Blockchain
