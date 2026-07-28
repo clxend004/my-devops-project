@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: blockchain
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: blockchain
+
+  template:
+    metadata:
+      labels:
+        app: blockchain
+
+    spec:
+
+      # Permission to pull private image from GHCR
+      imagePullSecrets:
+      - name: ghcr-secret
+
+      containers:
+
+      - name: blockchain
+
+        image: ghcr.io/ranjith0703/blockchain-app:866954c
+
+        ports:
+        - containerPort: 8545
