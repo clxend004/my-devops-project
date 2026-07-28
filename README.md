@@ -8,7 +8,4 @@
 ## Run with Docker
 docker-compose up --build
 
-Final pr check
-
-
-developer KRanjith
+develop by Ranjith KK
