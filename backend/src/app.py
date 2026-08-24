@@ -6,12 +6,24 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 from pymongo import MongoClient
 from bson import ObjectId
+from dotenv import load_dotenv
+
+load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env"))
+
+KYC_WEBHOOK_SECRET = os.getenv("KYC_WEBHOOK_SECRET")
+if not KYC_WEBHOOK_SECRET:
+    raise RuntimeError("KYC_WEBHOOK_SECRET is not configured")
 
 # ---------------------------
 # CREATE FOLDERS
 # ---------------------------
-os.makedirs("uploads", exist_ok=True)
-os.makedirs("logs", exist_ok=True)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+UPLOAD_DIR = os.path.join(BASE_DIR, "uploads")
+LOG_DIR = os.path.join(BASE_DIR, "logs")
+
+os.makedirs(UPLOAD_DIR, exist_ok=True)
+os.makedirs(LOG_DIR, exist_ok=True)
 
 # ---------------------------
 # LOGGING (FILE + TERMINAL)
@@ -20,7 +32,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | backend | %(levelname)s | %(message)s",
     handlers=[
-        logging.FileHandler("logs/transactions.log"),
+        logging.FileHandler(os.path.join(LOG_DIR, "transactions.log")),
         logging.StreamHandler()
     ]
 )
@@ -58,12 +70,19 @@ def home():
 def save_file(file):
     if not file:
         return None
-    file_id = str(uuid.uuid4())
-    filename = file_id + "_" + file.filename
-    filepath = os.path.join("uploads", filename)
-    file.save(filepath)
-    return filename
 
+    file_id = str(uuid.uuid4())
+
+    original_name = os.path.basename(file.filename)
+    filename = file_id + "_" + original_name
+
+    filepath = os.path.join(UPLOAD_DIR, filename)
+
+    file.save(filepath)
+
+    logger.info("KYC file stored: reference=%s", file_id)
+
+    return filename
 
 # ======================================================
 # ✅ KYC WEBHOOK (W5-T1 + W5-T2)
@@ -71,6 +90,13 @@ def save_file(file):
 @app.route("/webhook/kyc", methods=["POST", "GET"])
 def kyc_handler():
 
+    if request.method == "POST":
+        provided_secret = request.headers.get("X-KYC-Webhook-Secret")
+
+        if not provided_secret or provided_secret != KYC_WEBHOOK_SECRET:
+            logger.warning("Rejected KYC webhook: invalid authentication")
+            return jsonify({"error": "Unauthorized"}), 401
+        
     # ✅ GET → FETCH ALL RECORDS (for demo)
     if request.method == "GET":
         records = list(kyc_collection.find())
@@ -116,7 +142,6 @@ def kyc_handler():
             "user_id": user_id,
             "status": status,
             "score": int(score),
-            "aadhar": aadhar,
             "id_proof_file": id_filename,
             "selfie_file": selfie_filename,
             "timestamp": datetime.utcnow().isoformat()
@@ -127,7 +152,11 @@ def kyc_handler():
         # ✅ FIX ObjectId
         record["_id"] = str(result.inserted_id)
 
-        logger.info(f"KYC CREATED: {record}")
+        logger.info(
+        "KYC CREATED: status=%s score=%s",
+         status,
+         score
+        )
 
         return jsonify({
             "message": "KYC created successfully",
@@ -136,8 +165,8 @@ def kyc_handler():
         }), 200
 
     except Exception as e:
-        logger.error(str(e))
-        return jsonify({"error": str(e)}), 500
+        logger.exception("KYC webhook processing failed")
+        return jsonify({"error": "Internal server error"}), 500
 
 
 # ======================================================

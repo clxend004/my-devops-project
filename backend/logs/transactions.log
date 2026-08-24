@@ -320,3 +320,96 @@
 2026-07-04 16:17:07,917 | backend | INFO | [33mPress CTRL+C to quit[0m
 2026-07-04 18:27:30,070 | backend | INFO | 172.18.0.1 - - [04/Jul/2026 18:27:30] "GET / HTTP/1.1" 200 -
 2026-07-04 18:27:30,136 | backend | INFO | 172.18.0.1 - - [04/Jul/2026 18:27:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-19 06:47:13,763 | backend | INFO | Connected to MongoDB
+2026-08-19 06:47:13,773 | backend | INFO | Server started
+2026-08-19 06:47:13,780 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.9:5000
+2026-08-19 06:47:13,783 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-08-19 06:57:41,797 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 06:57:41] "GET /webhook/kyc HTTP/1.1" 200 -
+2026-08-19 06:57:41,989 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 06:57:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-19 06:57:50,415 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 06:57:50] "GET / HTTP/1.1" 200 -
+2026-08-19 06:58:02,226 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789111', 'id_proof_file': '8604dfa0-89ce-45b1-9db1-6883d124cacf_WhatsApp Image 2025-11-12 at 10.48.43_55a7102b.jpg', 'selfie_file': None, 'timestamp': '2026-08-19T06:58:02.110362', '_id': '6a8553fa87f307c8a5ed1354'}
+2026-08-19 06:58:02,229 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 06:58:02] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-08-19 07:00:40,051 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 07:00:40] "[33mGET /webhook/kyc/6a8553fa87f307c8a5ed1354 HTTP/1.1[0m" 404 -
+2026-08-19 07:00:47,808 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 07:00:47] "[33mPOST /webhook/kyc/6a8553fa87f307c8a5ed1354 HTTP/1.1[0m" 404 -
+2026-08-19 07:00:55,533 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 07:00:55] "[33mPOST /webhook/kyc/ HTTP/1.1[0m" 404 -
+2026-08-19 07:01:00,305 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789111', 'id_proof_file': 'c9523072-a1fa-4572-a852-28dc47e67a6c_WhatsApp Image 2025-11-12 at 10.48.43_55a7102b.jpg', 'selfie_file': None, 'timestamp': '2026-08-19T07:01:00.302827', '_id': '6a8554ac87f307c8a5ed1355'}
+2026-08-19 07:01:00,307 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 07:01:00] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-08-19 07:02:11,655 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789111', 'id_proof_file': '68cfbbdd-91b6-47de-a7a0-2b670b2a32f5_WhatsApp Image 2025-11-12 at 10.48.43_55a7102b.jpg', 'selfie_file': None, 'timestamp': '2026-08-19T07:02:11.651884', '_id': '6a8554f387f307c8a5ed1356'}
+2026-08-19 07:02:11,660 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 07:02:11] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-08-19 07:03:17,551 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789111', 'id_proof_file': '53bbc1d9-9555-4854-8457-c75ec52d5089_WhatsApp Image 2025-11-12 at 10.48.43_55a7102b.jpg', 'selfie_file': None, 'timestamp': '2026-08-19T07:03:17.548037', '_id': '6a85553587f307c8a5ed1357'}
+2026-08-19 07:03:17,555 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 07:03:17] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-08-19 07:04:01,228 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789111', 'id_proof_file': 'b38a236c-c77c-4c4b-8115-4c27117aede1_WhatsApp Image 2025-11-12 at 10.48.43_55a7102b.jpg', 'selfie_file': None, 'timestamp': '2026-08-19T07:04:01.226010', '_id': '6a85556187f307c8a5ed1358'}
+2026-08-19 07:04:01,232 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 07:04:01] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-08-19 07:04:53,358 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789111', 'id_proof_file': None, 'selfie_file': None, 'timestamp': '2026-08-19T07:04:53.355088', '_id': '6a85559587f307c8a5ed1359'}
+2026-08-19 07:04:53,363 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 07:04:53] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-08-19 07:05:31,628 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789111', 'id_proof_file': '0f9a9630-ddfa-433c-a630-2329ed91eb04_ChatGPT Image Aug 17, 2026, 02_11_15 PM.png', 'selfie_file': None, 'timestamp': '2026-08-19T07:05:31.626703', '_id': '6a8555bb87f307c8a5ed135a'}
+2026-08-19 07:05:31,632 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 07:05:31] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-08-19 07:06:19,568 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789111', 'id_proof_file': '900b5095-a3ef-4c30-a6cd-9662816327cd_WhatsApp Image 2025-10-10 at 19.56.23_7790298b.jpg', 'selfie_file': None, 'timestamp': '2026-08-19T07:06:19.567100', '_id': '6a8555eb87f307c8a5ed135b'}
+2026-08-19 07:06:19,571 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 07:06:19] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-08-19 07:20:21,506 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 07:20:21] "GET / HTTP/1.1" 200 -
+2026-08-19 07:32:17,683 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 07:32:17] "[33mGET /webhook/kyc/6a8555eb87f307c8a5ed135b HTTP/1.1[0m" 404 -
+2026-08-19 07:32:29,780 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 07:32:29] "[33mGET /webhook/kyc/6a8555eb87f307c8a5ed135b HTTP/1.1[0m" 404 -
+2026-08-19 07:32:35,704 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 07:32:35] "[33mPOST /webhook/kyc/6a8555eb87f307c8a5ed135b HTTP/1.1[0m" 404 -
+2026-08-19 07:32:41,127 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789111', 'id_proof_file': '647f3823-6838-44e7-9077-a760475aa046_WhatsApp Image 2025-10-10 at 19.56.23_7790298b.jpg', 'selfie_file': None, 'timestamp': '2026-08-19T07:32:41.102018', '_id': '6a855c1987f307c8a5ed135c'}
+2026-08-19 07:32:41,131 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 07:32:41] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-08-19 13:32:31,113 | backend | INFO | Connected to MongoDB
+2026-08-19 13:32:31,115 | backend | INFO | Server started
+2026-08-19 13:32:32,477 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.98.88.238:5000
+2026-08-19 13:32:32,478 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-08-19 08:03:10,119 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789111', 'id_proof_file': '03d72d32-bb3f-4dc7-8a98-0888ea487574_WhatsApp Image 2025-10-10 at 19.56.23_7790298b.jpg', 'selfie_file': None, 'timestamp': '2026-08-19T08:03:10.093749', '_id': '6a85633e87f307c8a5ed135d'}
+2026-08-19 08:03:10,129 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 08:03:10] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-08-19 08:03:38,891 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789111', 'id_proof_file': '4c371a5d-7180-4c38-b3ef-037c92008b50_passport_size.photo.png', 'selfie_file': None, 'timestamp': '2026-08-19T08:03:38.890265', '_id': '6a85635a87f307c8a5ed135e'}
+2026-08-19 08:03:38,894 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 08:03:38] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-08-19 08:05:29,661 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789111', 'id_proof_file': '407b6cf9-4dce-488e-bc3d-6017322140c5_passport_size.photo.png', 'selfie_file': None, 'timestamp': '2026-08-19T08:05:29.659319', '_id': '6a8563c987f307c8a5ed135f'}
+2026-08-19 08:05:29,664 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 08:05:29] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-08-19 08:29:19,433 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789111', 'id_proof_file': 'ea371c14-8391-40d9-9f11-4ad20c05058c_passport_size.photo.png', 'selfie_file': None, 'timestamp': '2026-08-19T08:29:19.429961', '_id': '6a85695f87f307c8a5ed1360'}
+2026-08-19 08:29:19,436 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 08:29:19] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-08-19 08:30:54,774 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789111', 'id_proof_file': '67d58028-3e1f-4b62-a312-012f632d5cd2_passport_size.photo.png', 'selfie_file': 'f9111dab-8707-4d7f-b601-c074112e3c5e_Family_photo.jpg', 'timestamp': '2026-08-19T08:30:54.772825', '_id': '6a8569be87f307c8a5ed1361'}
+2026-08-19 08:30:54,777 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 08:30:54] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-08-19 08:38:46,576 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 08:38:46] "GET / HTTP/1.1" 200 -
+2026-08-19 08:38:46,882 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 08:38:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-19 08:38:56,764 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 08:38:56] "[33mGET /blockchain HTTP/1.1[0m" 404 -
+2026-08-19 08:39:02,222 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 08:39:02] "[33mGET /blockchain HTTP/1.1[0m" 404 -
+2026-08-19 12:41:21,035 | backend | INFO | Connected to MongoDB
+2026-08-19 12:41:21,114 | backend | INFO | Server started
+2026-08-19 12:41:21,183 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.10:5000
+2026-08-19 12:41:21,274 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-08-19 12:41:30,648 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789111', 'id_proof_file': 'b6aaf929-c0c8-4589-b49f-027edb5ab762_passport_size.photo.png', 'selfie_file': '5fdb95da-58c7-4833-b17e-8b4be1c52010_ChatGPT Image Aug 17, 2026, 02_11_15 PM.png', 'timestamp': '2026-08-19T12:41:30.514864', '_id': '6a85a47a24439a3285528314'}
+2026-08-19 12:41:30,689 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 12:41:30] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-08-19 12:42:48,158 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 12:42:48] "GET / HTTP/1.1" 200 -
+2026-08-19 12:42:49,234 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 12:42:49] "GET / HTTP/1.1" 200 -
+2026-08-19 12:42:52,940 | backend | INFO | 172.18.0.1 - - [19/Aug/2026 12:42:52] "GET / HTTP/1.1" 200 -
+2026-08-20 04:42:39,932 | backend | INFO | Connected to MongoDB
+2026-08-20 04:42:40,005 | backend | INFO | Server started
+2026-08-20 04:42:40,103 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.10:5000
+2026-08-20 04:42:40,325 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-08-20 04:42:50,256 | backend | INFO | 172.18.0.1 - - [20/Aug/2026 04:42:50] "GET / HTTP/1.1" 200 -
+2026-08-20 04:42:50,491 | backend | INFO | 172.18.0.1 - - [20/Aug/2026 04:42:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-20 04:44:04,284 | backend | INFO | KYC CREATED: {'user_id': '101', 'status': 'verified', 'score': 95, 'aadhar': '123456789111', 'id_proof_file': '8dc60b02-3ee8-41da-803c-f5f0b15e5c34_untitled_design_90-sixteen_nine.webp', 'selfie_file': 'd78f40cc-17c7-443f-8759-3a08e207a332_WhatsApp Image 2026-08-19 at 5.52.41 PM.jpeg', 'timestamp': '2026-08-20T04:44:03.867305', '_id': '6a86861301c823bea384be66'}
+2026-08-20 04:44:04,323 | backend | INFO | 172.18.0.1 - - [20/Aug/2026 04:44:04] "POST /webhook/kyc HTTP/1.1" 200 -
+2026-08-20 04:47:39,794 | backend | INFO | Connected to MongoDB
+2026-08-20 04:47:39,807 | backend | INFO | Server started
+2026-08-20 04:47:39,835 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.7:5000
+2026-08-20 04:47:39,842 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-08-24 05:23:38,408 | backend | INFO | Connected to MongoDB
+2026-08-24 05:23:38,431 | backend | INFO | Server started
+2026-08-24 05:23:38,447 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.10:5000
+2026-08-24 05:23:38,450 | backend | INFO | [33mPress CTRL+C to quit[0m
