@@ -1,12 +1,15 @@
 version: "3.8"
 
 services:
+
   # ---------------------------
   # BACKEND
   # ---------------------------
   backend:
     build: ./backend
     container_name: backend
+    env_file:
+      - .env
     ports:
       - "5000:5000"
     volumes:
@@ -15,6 +18,12 @@ services:
     depends_on:
       - blockchain
       - mongodb
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
     networks:
       - app-network
 
@@ -103,7 +112,8 @@ services:
     image: prom/prometheus
     container_name: prometheus
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./monitoring/alerts.yml:/etc/prometheus/alerts.yml
     ports:
       - "9090:9090"
     depends_on:
@@ -118,12 +128,14 @@ services:
     image: grafana/grafana
     container_name: grafana
     ports:
-      - "3000:3000"
+      - "3002:3000"
+    depends_on:
+      - prometheus
     networks:
       - app-network
 
   # ---------------------------
-  # CADVISOR (METRICS)
+  # CADVISOR
   # ---------------------------
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:latest

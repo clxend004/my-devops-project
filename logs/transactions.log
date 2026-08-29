@@ -1,0 +1,89 @@
+2026-08-19 12:21:45,345 | backend | INFO | Connected to MongoDB
+2026-08-19 12:21:45,349 | backend | INFO | Server started
+2026-08-19 12:21:46,742 | backend | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.98.88.238:5000
+2026-08-19 12:21:46,743 | backend | INFO | [33mPress CTRL+C to quit[0m
+2026-08-19 12:21:52,267 | backend | INFO | 127.0.0.1 - - [19/Aug/2026 12:21:52] "GET / HTTP/1.1" 200 -
+2026-08-19 12:24:02,467 | backend | ERROR | mongodb:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 6a855281ea41eb48ffd4ed32, topology_type: Unknown, servers: [<ServerDescription ('mongodb', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongodb:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2026-08-19 12:24:02,469 | backend | INFO | 127.0.0.1 - - [19/Aug/2026 12:24:02] "[35m[1mPOST /webhook/kyc HTTP/1.1[0m" 500 -
+2026-08-19 12:24:08,869 | backend | ERROR | Exception on /webhook/kyc [GET]
+Traceback (most recent call last):
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ranjith\Music\my-devops\backend\src\app.py", line 87, in kyc_handler
+    records = list(kyc_collection.find())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymongo\synchronous\cursor.py", line 1289, in __next__
+    return self.next()
+           ^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymongo\synchronous\cursor.py", line 1265, in next
+    if len(self._data) or self._refresh():
+                          ^^^^^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymongo\synchronous\cursor.py", line 1213, in _refresh
+    self._send_message(q)
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymongo\synchronous\cursor.py", line 1108, in _send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymongo\_csot.py", line 125, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1938, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2048, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymongo\_csot.py", line 125, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2014, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2763, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2908, in _read
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2856, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1833, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymongo\synchronous\topology.py", line 428, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymongo\synchronous\topology.py", line 402, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymongo\synchronous\topology.py", line 298, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ranjith\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymongo\synchronous\topology.py", line 359, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: mongodb:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 6a855281ea41eb48ffd4ed32, topology_type: Unknown, servers: [<ServerDescription ('mongodb', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongodb:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2026-08-19 12:24:09,086 | backend | INFO | 127.0.0.1 - - [19/Aug/2026 12:24:09] "[35m[1mGET /webhook/kyc HTTP/1.1[0m" 500 -
+2026-08-19 12:24:34,601 | backend | ERROR | mongodb:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 6a855281ea41eb48ffd4ed32, topology_type: Unknown, servers: [<ServerDescription ('mongodb', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongodb:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2026-08-19 12:24:34,602 | backend | INFO | 127.0.0.1 - - [19/Aug/2026 12:24:34] "[35m[1mPOST /webhook/kyc HTTP/1.1[0m" 500 -
+2026-08-19 12:25:29,191 | backend | ERROR | mongodb:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 6a855281ea41eb48ffd4ed32, topology_type: Unknown, servers: [<ServerDescription ('mongodb', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongodb:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2026-08-19 12:25:29,193 | backend | INFO | 127.0.0.1 - - [19/Aug/2026 12:25:29] "[35m[1mPOST /webhook/kyc HTTP/1.1[0m" 500 -
+2026-08-19 13:33:01,966 | backend | INFO | 127.0.0.1 - - [19/Aug/2026 13:33:01] "GET / HTTP/1.1" 200 -
+2026-08-19 14:08:33,000 | backend | INFO | 127.0.0.1 - - [19/Aug/2026 14:08:32] "GET / HTTP/1.1" 200 -
+2026-08-19 15:31:36,419 | backend | INFO | 127.0.0.1 - - [19/Aug/2026 15:31:36] "GET / HTTP/1.1" 200 -
+2026-08-19 15:31:42,073 | backend | INFO | 127.0.0.1 - - [19/Aug/2026 15:31:42] "GET / HTTP/1.1" 200 -
