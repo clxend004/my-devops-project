@@ -1,4 +1,4 @@
-# DEV-W1-T3 – Minikube / Local Kubernetes Validation
+# Minikube / Local Kubernetes Validation
 
 ## 📌 Task Overview
 
