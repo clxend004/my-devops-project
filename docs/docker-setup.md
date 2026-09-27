@@ -1,4 +1,4 @@
-# DEV-W1-T2 – Docker Environment Standardization
+# Docker Environment Standardization
 
 ## 📌 Task Overview
 
